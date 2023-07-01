@@ -12,7 +12,8 @@
         },
         "@schematics/angular:component": {
           "standalone": true,
-          "skipTests": true
+          "skipTests": true,
+          "style": "scss"
         }
       },
       "root": "",
