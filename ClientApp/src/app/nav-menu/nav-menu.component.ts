@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-nav-menu',
   standalone: true,
   templateUrl: './nav-menu.component.html',
-  styleUrls: ['./nav-menu.component.css'],
+  styleUrls: ['./nav-menu.component.scss'],
   imports: [
     CommonModule,
     RouterModule
