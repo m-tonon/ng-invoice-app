@@ -1,0 +1,127 @@
+<div class="invoice-wrap d-flex flex-column position-fixed pt-5">
+  <form class="invoice-content">
+    <h1>New Invoice</h1>
+    <!-- Bill From -->
+    <div class="bill-from d-flex flex-column">
+      <h3>Bill From</h3>
+      <div class="input d-flex flex-column">
+        <label for="billerStreetAddress">Street Address</label>
+        <input type="text" id="billerStreetAddress" />
+      </div>
+      <div class="location-details d-flex">
+        <div class="input d-flex flex-column">
+          <label for="billerCity">City</label>
+          <input type="text" id="billerCity" />
+        </div>
+        <div class="input d-flex flex-column">
+          <label for="billerZipCode">Zip Code</label>
+          <input type="text" id="billerZipCode" />
+        </div>
+        <div class="input d-flex flex-column">
+          <label for="billerCountry">Country</label>
+          <input type="text" id="billerCountry" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Bill To -->
+    <div class="bill-to d-flex flex-column">
+      <h3>Bill To</h3>
+      <div class="input d-flex flex-column">
+        <label for="clientName">Client's Name</label>
+        <input type="text" id="clientName" />
+      </div>
+      <div class="input d-flex flex-column">
+        <label for="clientEmail">Client's Email</label>
+        <input type="text" id="clientEmail" />
+      </div>
+      <div class="input d-flex flex-column">
+        <label for="clientStreetAddress">Street Address</label>
+        <input type="text" id="clientStreetAddress" />
+      </div>
+      <div class="location-details d-flex">
+        <div class="input d-flex flex-column">
+          <label for="clientCity">City</label>
+          <input type="text" id="clientCity" />
+        </div>
+        <div class="input d-flex flex-column">
+          <label for="clientZipCode">Zip Code</label>
+          <input type="text" id="clientZipCode" />
+        </div>
+        <div class="input d-flex flex-column">
+          <label for="clientCountry">Country</label>
+          <input type="text" id="clientCountry" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Invoice Details -->
+    <div class="invoice-work d-flex flex-column">
+      <div class="payment d-flex">
+        <div class="input d-flex flex-column">
+          <label for="invoiceDate">Invoice Date</label>
+          <input disabled type="text" id="invoiceDate" />
+        </div>
+        <div class="inut d-flex flex-column">
+          <label for="paymentDueDate">Payment Due</label>
+          <input disabled type="text" id="paymentDueDate" />
+        </div>
+      </div>
+      <div class="input d-flex flex-column">
+        <label for="paymentTerms">Payment Terms</label>
+        <select name="paymentTerms" id="paymentTerms">
+          <option value="Net 30 Days">Net 30 Days</option>
+          <option value="Net 60 Days">Net 60 Days</option>
+        </select>
+      </div>
+      <div class="input d-flex flex-column">
+        <label for="productDescription">Product Description</label>
+        <input type="text" id="productDescription" />
+      </div>
+      <div class="work-items">
+        <h3>Item List</h3>
+        <table class="item-list">
+          <tr class="table-heading d-flex">
+            <th class="item-name">Item Name</th>
+            <th class="qty">Qty</th>
+            <th class="price">Price</th>
+            <th class="total">Total</th>
+          </tr>
+          <tr class="table-items d-flex">
+            <td class="item-name">
+              <input type="text" />
+            </td>
+            <td class="qty">
+              <input type="text" />
+            </td>
+            <td class="price">
+              <input type="text" />
+            </td>
+            <td class="total d-flex">
+              <input type="text" />
+            </td>
+            <div class="mx-1">
+              <img class="delete-item" src="../../../assets/icon-delete.svg" />
+            </div>
+          </tr>
+        </table>
+        <div class="d-flex button">
+          <img src="../../../assets/icon-plus.svg">
+          Add New Item
+        </div>
+      </div>
+    </div>
+
+    <!-- Save/Exit -->
+    <div class="save d-flex">
+      <div class="left">
+        <button type="button" class="red">Cancel</button>
+      </div>
+      <div class="right d-flex">
+        <button type="submit" class="dark-purple mb-4">Save Draft</button>
+        <button type="submit" class="purple mb-4">Create Invoice</button>
+        <button type="submit" class="purple mb-4">Update Invoice</button>
+      </div>
+    </div>
+  </form>
+</div>
