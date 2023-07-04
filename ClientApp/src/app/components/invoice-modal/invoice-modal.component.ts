@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,6 +11,11 @@ import { CommonModule } from '@angular/common';
 export class InvoiceModalComponent {
   @Output() invoiceOpen: EventEmitter<boolean> = new EventEmitter<boolean>();
   isInvoiceOpen: boolean = false;
+
+  @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+    this.cancelInvoice();
+    console.log('esc pressed')
+  }
   
   cancelInvoice(): void {
     this.isInvoiceOpen = false;
