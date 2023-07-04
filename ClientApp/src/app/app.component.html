@@ -1,7 +1,8 @@
 <div class="app d-flex flex-column">
   <app-nav-menu />
   <div class="app-content d-flex flex-column mt-5">
-    <router-outlet />
-    <app-invoice-modal />
+    <!-- <router-outlet /> -->
+    <app-home (invoiceOpen)="onOpenInvoice($event)" />
+    <app-invoice-modal *ngIf="isInvoiceOpen"/>
   </div>
 </div>
