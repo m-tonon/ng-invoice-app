@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +9,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./invoice-modal.component.scss']
 })
 export class InvoiceModalComponent {
-
+  @Output() invoiceOpen: EventEmitter<boolean> = new EventEmitter<boolean>();
+  isInvoiceOpen: boolean = false;
+  
+  cancelInvoice(): void {
+    this.isInvoiceOpen = false;
+    this.invoiceOpen.emit(this.isInvoiceOpen);
+    // clear form
+  }
 }

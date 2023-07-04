@@ -3,6 +3,6 @@
   <div class="app-content d-flex flex-column mt-5">
     <!-- <router-outlet /> -->
     <app-home (invoiceOpen)="onOpenInvoice($event)" />
-    <app-invoice-modal *ngIf="isInvoiceOpen"/>
+    <app-invoice-modal *ngIf="isInvoiceOpen" (invoiceOpen)="onClosedInvoice($event)"/>
   </div>
 </div>

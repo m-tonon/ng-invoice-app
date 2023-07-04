@@ -24,4 +24,8 @@ export class AppComponent {
   onOpenInvoice(invoiceState: boolean): void {
     this.isInvoiceOpen = invoiceState ;
   }
+
+  onClosedInvoice(invoiceState: boolean): void {
+    this.isInvoiceOpen = invoiceState;
+  }
 }
