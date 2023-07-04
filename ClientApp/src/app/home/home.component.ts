@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -11,4 +11,11 @@ import { Component } from '@angular/core';
   ]
 })
 export class HomeComponent {
+  @Output() invoiceOpen: EventEmitter<boolean> = new EventEmitter<boolean>();
+  isInvoiceOpen: boolean = false;
+  
+  openInvoice(): void {
+    this.isInvoiceOpen = true;
+    this.invoiceOpen.emit(this.isInvoiceOpen);
+  }
 }

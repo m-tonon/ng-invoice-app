@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { InvoiceModalComponent } from './components/invoice-modal/invoice-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,18 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
     CommonModule,
     RouterModule,
     HomeComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    InvoiceModalComponent
   ]
 })
 export class AppComponent {
-  title = 'app';
+  @Input() isInvoiceOpen: boolean = false;
+
+  onOpenInvoice(invoiceState: boolean): void {
+    this.isInvoiceOpen = invoiceState ;
+  }
+
+  onClosedInvoice(invoiceState: boolean): void {
+    this.isInvoiceOpen = invoiceState;
+  }
 }
