@@ -2,27 +2,27 @@
   <!-- Overlay -->
   <div (click)="cancelInvoice()" class="overlay position-fixed"></div>
   
-  <form class="invoice-content">
+  <form [formGroup]="form" class="invoice-content">
     <h1>New Invoice</h1>
     <!-- Bill From -->
     <div class="bill-from d-flex flex-column">
       <h3>Bill From</h3>
       <div class="input d-flex flex-column">
         <label for="billerStreetAddress">Street Address</label>
-        <input type="text" id="billerStreetAddress" />
+        <input formControlName="billerStreetAddress" type="text" id="billerStreetAddress" />
       </div>
       <div class="location-details d-flex">
         <div class="input d-flex flex-column">
           <label for="billerCity">City</label>
-          <input type="text" id="billerCity" />
+          <input formControlName="billerCity" type="text" id="billerCity" />
         </div>
         <div class="input d-flex flex-column">
           <label for="billerZipCode">Zip Code</label>
-          <input type="text" id="billerZipCode" />
+          <input formControlName="billerZipCode" type="text" id="billerZipCode" />
         </div>
         <div class="input d-flex flex-column">
           <label for="billerCountry">Country</label>
-          <input type="text" id="billerCountry" />
+          <input formControlName="billerCountry" type="text" id="billerCountry" />
         </div>
       </div>
     </div>
@@ -32,28 +32,28 @@
       <h3>Bill To</h3>
       <div class="input d-flex flex-column">
         <label for="clientName">Client's Name</label>
-        <input type="text" id="clientName" />
+        <input formControlName="clientName" type="text" id="clientName" />
       </div>
       <div class="input d-flex flex-column">
         <label for="clientEmail">Client's Email</label>
-        <input type="text" id="clientEmail" />
+        <input formControlName="clientEmail" type="text" id="clientEmail" />
       </div>
       <div class="input d-flex flex-column">
         <label for="clientStreetAddress">Street Address</label>
-        <input type="text" id="clientStreetAddress" />
+        <input formControlName="clientStreetAddress" type="text" id="clientStreetAddress" />
       </div>
       <div class="location-details d-flex">
         <div class="input d-flex flex-column">
           <label for="clientCity">City</label>
-          <input type="text" id="clientCity" />
+          <input formControlName="clientCity" type="text" id="clientCity" />
         </div>
         <div class="input d-flex flex-column">
           <label for="clientZipCode">Zip Code</label>
-          <input type="text" id="clientZipCode" />
+          <input formControlName="clientZipCode" type="text" id="clientZipCode" />
         </div>
         <div class="input d-flex flex-column">
           <label for="clientCountry">Country</label>
-          <input type="text" id="clientCountry" />
+          <input formControlName="clientCountry" type="text" id="clientCountry" />
         </div>
       </div>
     </div>
@@ -63,23 +63,23 @@
       <div class="payment d-flex">
         <div class="input d-flex flex-column">
           <label for="invoiceDate">Invoice Date</label>
-          <input disabled type="text" id="invoiceDate" />
+          <input formControlName="invoiceDate" type="text" id="invoiceDate" />
         </div>
         <div class="inut d-flex flex-column">
           <label for="paymentDueDate">Payment Due</label>
-          <input disabled type="text" id="paymentDueDate" />
+          <input formControlName="paymentDueDate" type="text" id="paymentDueDate" />
         </div>
       </div>
       <div class="input d-flex flex-column">
         <label for="paymentTerms">Payment Terms</label>
-        <select name="paymentTerms" id="paymentTerms">
+        <select formControlName="paymentTerms" name="paymentTerms" id="paymentTerms">
           <option value="Net 30 Days">Net 30 Days</option>
           <option value="Net 60 Days">Net 60 Days</option>
         </select>
       </div>
       <div class="input d-flex flex-column">
         <label for="productDescription">Product Description</label>
-        <input type="text" id="productDescription" />
+        <input formControlName="productDescription" type="text" id="productDescription" />
       </div>
       <div class="work-items">
         <h3>Item List</h3>
@@ -122,7 +122,7 @@
       </div>
       <div class="right d-flex">
         <button type="submit" class="dark-purple mb-4">Save Draft</button>
-        <button type="submit" class="purple mb-4">Create Invoice</button>
+        <button (click)="registerInvoice()" type="submit" class="purple mb-4">Create Invoice</button>
         <button type="submit" class="purple mb-4">Update Invoice</button>
       </div>
     </div>
